@@ -11,5 +11,5 @@ export default defineConfig({
       '@': resolve(__dirname, 'src') //路徑別名
     }
   },
-  base: '/sp-project/', //github發布版的網址需改為"/sp-project/"?????
+  base: '/sp-LoginPage/', //github發布版的網址需改為"/sp-project/"?????
 })
