@@ -2,9 +2,9 @@
 
 <el-button type="primary" class="p-5 bg-green">我是Views Index</el-button>
 <el-button :icon="Search" circle />
-<!-- <button scope="public_profile,email" autologoutlink="true" @click="checkLoginState">FB登入紐</button> -->
+<button scope="public_profile,email" autologoutlink="true" @click="checkLoginState">FB登入紐</button>
 <div>目前狀態：</div> 
-<!-- <div id="status">{{fbstatus}}</div> -->
+<div id="status">{{fbstatus}}</div>
 
 </template>
 
