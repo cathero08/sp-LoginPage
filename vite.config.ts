@@ -10,5 +10,6 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src') //路徑別名
     }
-  }
+  },
+  base: './',
 })
