@@ -3,8 +3,11 @@
 <el-button type="primary" class="p-5 bg-green">我是Views Index</el-button>
 <el-button :icon="Search" circle />
 <button scope="public_profile,email" autologoutlink="true" @click="checkLoginState">FB登入紐</button>
+<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
 <div>目前狀態：</div> 
 <div id="status">{{fbstatus}}</div>
+
 
 </template>
 
@@ -16,6 +19,7 @@ import Web3 from 'web3';
 // const web3 = new Web3('ws://localhost:8546');
 // web3.setProvider(new Web3.providers.WebsocketProvider('ws://localhost:8546'));
 // web3.eth.getAccounts().then(console.log);
+console.log('我在router');
 
 const fbstatus = ref('');
 
@@ -46,6 +50,11 @@ function testAPI() {                      // Testing Graph API after login.  See
 }
 
 function checkLoginState() {               // Called when a person is finished with the Login Button.当一个人完成登录按钮时调用。
+  // @ts-ignore
+  FB.login(function(response){
+    // handle the response 
+    console.log(response);
+  });
   // @ts-ignore
   FB.getLoginStatus(function(response) {   // See the onlogin handler// 查看 onlogin 处理程序
     statusChangeCallback(response);
