@@ -5,7 +5,8 @@ import type { API_FBLOGIN_Response } from '@/stores/modal';
 
 export const userStore = defineStore('user',{
   state: () => ({
-    fbLoginInfo: {} as API_FBLOGIN_Response ,
+    isLogin: false,
+    fbLoginInfo: {}  ,
     fbName: '',
   }),
   actions: {

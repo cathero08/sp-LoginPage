@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue","src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue","src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "node_modules/@types/**/*.d.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -10,6 +10,11 @@
     "allowSyntheticDefaultImports": true, //web3
     "esModuleInterop": true, //web3
   },
+  "files": [
+    // "index.d.ts",
+    // "src/**/*.ts",
+    // "src/**/*.vue",
+  ],
 
   "references": [
     {
