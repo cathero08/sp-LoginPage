@@ -54,7 +54,6 @@ onMounted(()=> {
   google.accounts.id.initialize({
     client_id: '736590708524-hoa5jlkd9ruess896ds1i6coiiavdrjg.apps.googleusercontent.com',
     callback: handleCredentialResponse,
-    itp_support: true
   });
 })
 </script>
