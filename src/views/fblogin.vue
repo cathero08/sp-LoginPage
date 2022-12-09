@@ -15,13 +15,9 @@ import {userStore} from '@/stores/userStore';
 const UserStore = userStore();
 const fbresponse = ref('');
 
-
-
-setTimeout(() => {
-  FB.getLoginStatus(function(response) {   // See the onlogin handler// 查看 onlogin 处理程序
-    statusChangeCallback(response);
-  });
-}, 6000);
+FB.getLoginStatus(function(response) {   // See the onlogin handler// 查看 onlogin 处理程序
+  statusChangeCallback(response);
+});
 
 const LogOut = () => {
   FB.logout(function(response) {
