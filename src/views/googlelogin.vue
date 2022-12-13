@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <el-button @click="onSignin">Google登入</el-button>
+  <el-button @click="client.requestCode()">Google登入</el-button>
   <el-button @click="onSignout">Google登出</el-button>
   <div v-if="googleInfo?.name">
     <div>name: {{googleInfo.name}}</div>
@@ -18,43 +18,45 @@ import jwt_decode from "jwt-decode";
 import type {API_GOOGLELOGIN_Response} from "@/stores/modal"
 import axios from 'axios';
 
-
-// const googleInfo:API_GOOGLELOGIN_Response = reactive({
-//   iss: '', // The JWT's issuer
-//   nbf:  0,
-//   aud: '', // Your server's client ID
-//   sub: '', // The unique ID of the user's Google Account
-//   hd: '', // If present, the host domain of the user's GSuite email address
-//   email: '', // The user's email address
-//   email_verified: true, // true, if Google has verified the email address
-//   azp: '',
-//   name: '',
-//   picture: '', // If present, a URL to user's profile picture
-//   given_name: '',
-//   family_name: '',
-//   iat: 0, // Unix timestamp of the assertion's creation time
-//   exp: 0, // Unix timestamp of the assertion's expiration time
-//   jti: ''
-// });
 const googleInfo = ref();
 
 const handleCredentialResponse = (res: any) => {
-  console.log('googlej jwt', jwt_decode(res.credential));
-  googleInfo.value = jwt_decode(res.credential)
+  console.log(res);
+  // console.log('googlej jwt', jwt_decode(res.credential));
+  // googleInfo.value = jwt_decode(res.credential)
+  const resToken = axios({
+    method: 'post',
+    url: 'https://oauth2.googleapis.com/token',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      code: res.code,
+      client_id: '736590708524-hoa5jlkd9ruess896ds1i6coiiavdrjg.apps.googleusercontent.com',
+      client_secret: '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',
+      redirect_uri: 'https://localhost:5173/sp-LoginPage/',
+      grant_type: 'authorization_code',
+    }
+  })
+  console.log(resToken);
 }
 
 const onSignin = () => {
-  google.accounts.id.prompt();
 }
 const onSignout = () => {
   google.accounts.id.disableAutoSelect();
 }
 
+const client = google.accounts.oauth2.initCodeClient({
+  client_id: '736590708524-hoa5jlkd9ruess896ds1i6coiiavdrjg.apps.googleusercontent.com',
+  scope: 'https://www.googleapis.com/auth/calendar.readonly',
+  ux_mode: 'popup',
+  redirect_uri: 'https://localhost:5173/sp-LoginPage/',
+  callback: handleCredentialResponse,
+});
+
 onMounted(()=> {
-  google.accounts.id.initialize({
-    client_id: '736590708524-hoa5jlkd9ruess896ds1i6coiiavdrjg.apps.googleusercontent.com',
-    callback: handleCredentialResponse,
-  });
+
 })
 </script>
 <style lang='scss' scope>
