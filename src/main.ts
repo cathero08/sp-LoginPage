@@ -3,7 +3,7 @@ import { createPinia } from 'pinia'
 import { fbJsdk } from '@/fb'
 
 
-import '@/assets/base.css'
+import '@/assets/base.scss'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 

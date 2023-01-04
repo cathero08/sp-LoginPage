@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .WH_FULL {
+    @apply w-full h-full;
+  }
+  .WH_HALF {
+    @apply w-1/2 h-1/2;
+  }
+  .FLEX_C {
+    @apply flex flex-col;
+  }
+  .FLEX_R {
+    @apply flex flex-row;
+  }
+  .FLEX_C_CENTER {
+    @apply flex flex-col justify-center;
+  }
+  .FLEX_R_CENTER {
+    @apply flex flex-row items-center;
+  }
+  .CENTER {
+    @apply flex items-center justify-center;
+  }
+  .CENTER_C {
+    @apply flex flex-col items-center justify-center;
+  }
+  .BETWEEN {
+    @apply flex justify-between;
+  }
+  .BETWEEN_C {
+    @apply flex flex-col justify-between;
+  }
+  .BETWEEN_CENTER {
+    @apply flex items-center justify-between;
+  }
+
+  .BG_GRADIENT_1 {
+		/* background: linear-gradient(90deg, #db082d 0%, #f0453a 52.97%, #fe693b 100%) !important; */
+		@apply bg-opacity-100 bg-gradient-to-r from-[#db082d] via-[#f0453a] to-[#fe693b];
+	}
+	.BG_GRADIENT_1_opacity_50 {
+		/* background: linear-gradient(90deg, #db082d 0%, #f0453a 52.97%, #fe693b 100%) !important; */
+		@apply bg-opacity-50 bg-gradient-to-r from-[#db082d] via-[#f0453a] to-[#fe693b];
+	}
+	.BG_GRADIENT_2 {
+		@apply bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500;
+	}
+	.BG_GRADIENT_GOLD {
+		/* background: linear-gradient(90deg, #db082d 0%, #f0453a 52.97%, #fe693b 100%) !important; */
+		@apply bg-opacity-100 bg-gradient-to-r from-[#ECCC95] to-[#AC8954];
+	}
+
+  .xBlueBtn {
+    @apply px-4 font-semibold text-white border-none rounded bg-xBlue hover:bg-xBlue hover:text-white hover:opacity-80 focus:opacity-80 focus:bg-xBlue focus:text-white disabled:cursor-not-allowed disabled:opacity-20  !important;
+  }
+  .xRedBtn {
+    @apply px-4 font-semibold text-white border-none rounded bg-xRed hover:bg-xRed hover:text-white hover:opacity-80 focus:opacity-80 focus:bg-xRed focus:text-white disabled:cursor-not-allowed disabled:opacity-20  !important;
+  }
+  .primaryBtn {
+    @apply px-4 font-semibold text-white border-none rounded BG_GRADIENT_1 hover:BG_GRADIENT_1 hover:text-white hover:opacity-80 focus:opacity-80 focus:BG_GRADIENT_1 focus:text-white disabled:cursor-not-allowed disabled:opacity-20 !important;
+  }
+  .cancelBtn {
+    @apply px-4 font-semibold border-none rounded bg-xBlue bg-opacity-5 hover:bg-xBlue hover:bg-opacity-20 focus:bg-xBlue focus:bg-opacity-20 disabled:cursor-not-allowed disabled:opacity-20  !important;
+  }
+}
