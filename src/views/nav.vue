@@ -1,6 +1,4 @@
 <template>
-  <!-- <fblogin/>
-    <googlelogin /> -->
   <div class="h-[60px]">
     <div class="BETWEEN items-center w-[80%] h-full mx-auto">
       <div>XX I'M BLUE</div>
@@ -11,12 +9,12 @@
       >
         LOGIN
       </div>
-      <div v-else class="flex">
-        <div>
-          <img :src="UserStore.navUser?.photo" />
+      <div v-else class="FLEX_R_CENTER gap-1">
+        <div class="w-8 rounded-full overflow-hidden">
+          <img class="w-full" :src="UserStore.navUser?.photo" />
         </div>
-        <div>{{ UserStore.navUser?.name }}</div>
-        <div @click="UserStore.LogOut">登出</div>
+        <div class="text-sm">{{ UserStore.navUser?.name }}</div>
+        <div class="text-sm cursor-pointer border-b border-solid border-transparent hover:border-b hover:border-solid hover:border-black" @click="UserStore.LogOut">Logout</div>
       </div>
     </div>
   </div>
