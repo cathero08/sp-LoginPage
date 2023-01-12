@@ -53,7 +53,6 @@ export const userStore = defineStore("user", {
           this.loginplace = "FB";
           // @ts-ignore
           FB.api("/me", { fields: "id,name,email,picture" }, (response: TResponse) => {
-            console.log(response);
             const SystemStore = systemStore();
             SystemStore.login_fromModal = false;
             this.navUser.name = response.name;

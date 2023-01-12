@@ -13,6 +13,9 @@ html,body {
   border-radius: 16px !important;
   width: 90% !important;
   max-width: 400px !important;
+  .el-dialog__header {
+    padding: 0 !important;
+  }
   // .el-dialog__header {
   //   text-align: center;
   //   margin-right: 0px;

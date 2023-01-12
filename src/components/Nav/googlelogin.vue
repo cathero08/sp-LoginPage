@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <el-button @click="client.requestCode()">Google登入</el-button>
+  <el-button type="success" class="w-full" @click="client.requestCode()">Google登入</el-button>
 </div>
 </template>
 
@@ -9,6 +9,11 @@
 import {onMounted, ref, reactive} from 'vue';
 import jwt_decode from "jwt-decode";
 import axios from 'axios';
+import { userStore } from '@/stores/userStore';
+import { systemStore } from '@/stores/systemStore';
+
+const UserStore = userStore();
+const SystemStore = systemStore();
 
 const handleCredentialResponse = async(res: any) => {
   const resToken = await axios({
@@ -25,7 +30,9 @@ const handleCredentialResponse = async(res: any) => {
       grant_type: 'authorization_code',
     }
   })
-  return localStorage.setItem('loginN', JSON.stringify(resToken?.data));
+  localStorage.setItem('loginN', JSON.stringify(resToken?.data));
+  SystemStore.login_fromModal = false;
+  return UserStore.AllLoginStatus();
 }
 
 const client = google.accounts.oauth2.initCodeClient({
