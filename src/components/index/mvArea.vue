@@ -34,7 +34,7 @@ const active = ref(0);
 const preactive = ref(1);
 const img = (n:number) => {
   return {
-    backgroundImage: `url(/assets/img/photo${n}.jpeg)`,
+    backgroundImage: `url(/sp-LoginPage/assets/img/photo${n}.jpeg)`,
     animationDuration: `${animationDuration}s`,
   }
 }
