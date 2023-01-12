@@ -26,7 +26,7 @@ const handleCredentialResponse = async(res: any) => {
       code: res.code,
       client_id: '736590708524-hoa5jlkd9ruess896ds1i6coiiavdrjg.apps.googleusercontent.com',
       client_secret: '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',
-      redirect_uri: 'https://localhost:5173',
+      redirect_uri: 'https://localhost:5173 https://cathero08.github.io/sp-LoginPage/',
       grant_type: 'authorization_code',
     }
   })
