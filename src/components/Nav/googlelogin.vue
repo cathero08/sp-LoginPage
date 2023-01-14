@@ -39,7 +39,7 @@ const client = google.accounts.oauth2.initCodeClient({
   client_id: '736590708524-hoa5jlkd9ruess896ds1i6coiiavdrjg.apps.googleusercontent.com',
   scope: 'https://www.googleapis.com/auth/calendar.readonly',
   ux_mode: 'popup',
-  redirect_uri: 'https://localhost:5173/sp-LoginPage/',
+  redirect_uri: process.env.NODE_ENV === 'development' ? 'https://localhost:5173/sp-LoginPage/' : 'https://cathero08.github.io/sp-LoginPage/',
   callback: handleCredentialResponse,
 });
 
