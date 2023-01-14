@@ -2,11 +2,15 @@ import { resolve } from 'path'
 import fs from 'fs';
 import { createHtmlPlugin }from 'vite-plugin-html';
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import pkg from './package.json';
 
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 // https://vitejs.dev/config/
 export default defineConfig((config) => {
@@ -18,7 +22,7 @@ export default defineConfig((config) => {
         inject: {
           data: {
             ver: pkg.version,
-            buildTime: dayjs().format('YYYYMMDDHHmmss'),
+            buildTime: dayjs().tz("Asia/Taipei").format('YYYYMMDDHHmmss'),
           },
         },
       }),],
