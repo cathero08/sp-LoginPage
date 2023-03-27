@@ -1,5 +1,6 @@
 <template>
-    <div class="kv">
+    <div class="kv overflow-hidden">
+			<hexagon />
       <div class="kv-item" :class='{scroll:kvScroll, animate: active == (item - 1) || preactive == (item - 1) }' v-for="item in total" :style="img(item)">
       </div>
       <div class="">
@@ -21,6 +22,8 @@
 
 <script lang='ts' setup>
 import { ref } from "vue";
+
+import hexagon from "@/components/index/hexagon.vue"
 
 
 const kvScroll = ref(false);
