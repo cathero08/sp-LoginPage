@@ -1,25 +1,27 @@
 @import './tailwind.css';
 
-// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;900&display=swap');
 
 // 彈窗抖動
-html,body {
-  padding-right: 0px !important;
-  font-family: sans-serif;
+html,
+body {
+	padding-right: 0px !important;
+	font-family: 'Noto Sans TC', sans-serif;
+	color: #333;
 }
 
 // 登入彈窗UI客制
 .dialog_login {
-  border-radius: 16px !important;
-  width: 90% !important;
-  max-width: 400px !important;
-  .el-dialog__header {
-    padding: 0 !important;
-  }
-  // .el-dialog__header {
-  //   text-align: center;
-  //   margin-right: 0px;
-  //   font-size: 20px;
-  //   font-weight: bold;
-  // }
+	border-radius: 16px !important;
+	width: 90% !important;
+	max-width: 400px !important;
+	.el-dialog__header {
+		padding: 0 !important;
+	}
+	// .el-dialog__header {
+	//   text-align: center;
+	//   margin-right: 0px;
+	//   font-size: 20px;
+	//   font-weight: bold;
+	// }
 }
