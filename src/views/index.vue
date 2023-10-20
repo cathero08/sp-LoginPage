@@ -8,7 +8,7 @@
 			<aboutArea />
 			<!-- <caseSwiper /> -->
 
-			<div class="aaa">123</div>
+			<!-- <div class="aaa">123</div> -->
 		</div>
 	</div>
 </template>

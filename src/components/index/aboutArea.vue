@@ -28,6 +28,7 @@
 	const catImg = ref(`/sp-LoginPage/assets/img/Snipaste_2023-03-28_04-38-39.jpg`);
 	const wedding = ref(`/sp-LoginPage/assets/img/Snipaste_2023-03-29_01-13-43.jpg`);
 	const splogin = ref(`/sp-LoginPage/assets/img/sp-login.jpg`);
+	const twitterImg = ref(`/sp-LoginPage/assets/img/Snipaste_2023-10-21_01-41-12.jpg`);
 
 	const spLoginList = computed(() => {
 		return `
@@ -38,8 +39,23 @@
 			</ol>
 		`;
 	});
+	const twitterList = computed(() => {
+		return `
+			<ol style="list-style:auto; padding-left:20px">
+				<li>使用工具有 Nuxt3, Mongodb, Prisma, Cloudinary, Tailwindcss 部署使用Vercel</li>
+				<li>登入使用 JWT 機制,密碼有做 bcrypt 加密</li>
+				<li>主要是試做 Nuxt3 的框架練習</li>
+			</ol>
+		`;
+	});
 
 	const demoList = [
+		{
+			title: `Clone-twitter`,
+			content: `<p>RWD設計參考Twitter, 有搜尋,發文,回文,個人頁還有夜晚模式功能<br /><br />${twitterList.value}`,
+			image: twitterImg.value,
+			link: `https://test-twitter-orcin.vercel.app/`,
+		},
 		{
 			title: `個人作品集`,
 			content: `<p>統整一些之前做過的作品和實驗新的串接、套件、動畫<br /><br />${spLoginList.value}`,
